@@ -37,10 +37,14 @@ export default function CreateProductForm() {
 
   useEffect(() => {
     if (state?.success) {
-      toast.success("Product created successfully!");
+      toast.success("Product Created", {
+        description: "Your product has been successfully added to the store.",
+      });
       router.push("/products");
     } else if (state?.error) {
-      toast.error(state.error);
+      toast.error("Operation Failed", {
+        description: state.error,
+      });
     }
   }, [state, router]);
 

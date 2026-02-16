@@ -1,56 +1,96 @@
-"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Product } from "@/types/product";
 import Link from "next/link";
 import Image from "next/image";
-import { Eye, ShoppingCart } from "lucide-react";
+import { Eye, ShoppingCart, Star } from "lucide-react";
 import { useAddToCart } from "@/hooks/useAddToCart";
 
 export default function ProductCard({ product }: { product: Product }) {
   const { handleAddToCart } = useAddToCart();
 
   return (
-    <Card className="group overflow-hidden border-zinc-200 bg-white transition-all hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900 flex flex-col gap-0 h-full w-full max-w-87.5 sm:max-w-full mx-auto sm:mx-0 py-0 rounded-xl">
-      <CardHeader className="relative flex aspect-4/3 items-center justify-center p-3 sm:p-4 overflow-hidden bg-white">
+    <div className="group relative z-0 flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-zinc-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900">
+      {/* Clickable Card Overlay */}
+      <Link href={`/products/${product.id}`} className="absolute inset-0 z-10 block" aria-label={`View details for ${product.title}`}>
+        <span className="sr-only">View details for {product.title}</span>
+      </Link>
+      
+      {/* Image Section */}
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-zinc-50 dark:bg-zinc-950/50 p-4">
         <Image
           src={product.image}
           alt={product.title}
           fill
-          className="object-contain p-3 sm:p-4 transition-transform duration-500 group-hover:scale-105"
+          className="object-contain transition-transform duration-500 group-hover:scale-110 motion-reduce:transform-none"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
-        <Badge className="absolute left-1.5 top-1.5 sm:left-2 sm:top-2 bg-zinc-100/90 text-[9px] sm:text-[10px] text-zinc-900 border-none hover:bg-zinc-200 capitalize">
-          {product.category}
-        </Badge>
-      </CardHeader>
-      <CardContent className="flex-1 p-3 sm:p-4 space-y-1">
-        <CardTitle className="line-clamp-1 text-xs sm:text-sm font-bold text-zinc-900 group-hover:text-[#e41e26] transition-colors">
-          {product.title}
-        </CardTitle>
-        <div className="flex items-center justify-between py-1">
-          <span className="text-sm sm:text-base font-black text-[#e41e26]">
-            ${product.price.toFixed(2)}
-          </span>
-          <Link href={`/products/${product.id}`}>
-            <Button variant="ghost" size="sm" className="h-7 sm:h-8 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-zinc-400 hover:text-[#e41e26] hover:bg-red-50 p-0 px-2">
-              Details
-              <Eye className="ml-1 h-3 w-3" />
-            </Button>
-          </Link>
+      </div>
+
+      {/* Content Section */}
+      <div className="flex flex-1 flex-col p-4">
+        <div className="flex-1 space-y-2">
+            <h3 className="line-clamp-2 text-sm font-bold leading-tight text-zinc-900 transition-colors group-hover:text-[#e41e26] dark:text-zinc-50" title={product.title}>
+            {product.title}
+            </h3>
+            
+            <p className="line-clamp-2 text-xs text-zinc-500 dark:text-zinc-400">
+                {product.description}
+            </p>
+
+            <div className="flex flex-wrap items-center gap-2">
+              <Badge variant="secondary" className="bg-zinc-100 text-[10px] font-bold uppercase tracking-wider text-zinc-600 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300">
+                {product.category}
+              </Badge>
+              {product.rating && (
+                <div className="flex items-center gap-1 text-[10px] font-bold text-zinc-700 dark:text-zinc-300 bg-zinc-50 dark:bg-zinc-800/50 px-2 py-1 rounded-full">
+                  <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
+                  <span>{product.rating.rate}</span>
+                  <span className="text-zinc-400 font-normal ml-0.5">({product.rating.count})</span>
+                </div>
+              )}
+            </div>
         </div>
-      </CardContent>
-      <CardFooter className="p-3 sm:p-4 pt-0">
-        <Button 
-          onClick={() => handleAddToCart(product)}
-          className="w-full bg-zinc-900 hover:bg-[#e41e26] text-[10px] sm:text-xs font-bold gap-1 sm:gap-2 h-8 sm:h-9 rounded-lg transition-all"
-        >
-          <ShoppingCart className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
-         
-          <span className="inline ">Add</span>
-        </Button>
-      </CardFooter>
-    </Card>
+        
+        <div className="mt-3 pt-3 border-t border-zinc-100 dark:border-zinc-800">
+            <div className="flex items-end justify-between mb-3">
+                <div className="flex flex-col">
+                    <span className="text-[10px] uppercase tracking-wider text-zinc-400 font-bold">Price</span>
+                    <span className="text-xl font-black text-zinc-900 dark:text-white tracking-tight">
+                        ${product.price.toFixed(2)}
+                    </span>
+                </div>
+            </div>
+
+            {/* Actions - Properly positioned above the card link */}
+            <div className="grid grid-cols-2 gap-2 relative z-20">
+               <Button 
+                variant="outline"
+                size="sm"
+                className="w-full h-10 cursor-pointer items-center justify-center gap-2 rounded-xl border-zinc-200 bg-transparent font-bold text-zinc-700 hover:bg-zinc-100 hover:text-zinc-900 hover:border-zinc-300 dark:border-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
+                asChild
+              >
+                 <Link href={`/products/${product.id}`}>
+                  <Eye className="h-4 w-4" />
+                  <span>Details</span>
+                </Link>
+              </Button>
+
+              <Button 
+                onClick={() => handleAddToCart(product)}
+                size="sm"
+                className="w-full h-10 cursor-pointer items-center justify-center gap-2 rounded-xl bg-zinc-900 font-bold text-white shadow-lg shadow-zinc-900/10 transition-all hover:bg-[#e41e26] hover:shadow-red-500/20 hover:-translate-y-0.5 active:scale-95 dark:bg-white dark:text-zinc-900 dark:hover:bg-[#e41e26] dark:hover:text-white"
+                aria-label="Add to cart"
+              >
+                <ShoppingCart className="h-4 w-4" />
+                <span>Add</span>
+              </Button>
+            </div>
+        </div>
+      </div>
+    </div>
   );
 }
+
 

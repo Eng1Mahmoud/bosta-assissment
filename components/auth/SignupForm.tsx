@@ -15,10 +15,14 @@ export function SignupForm() {
 
   useEffect(() => {
     if (state?.success) {
-      toast.success(state.data?.message || "Account created successfully!");
+      toast.success("Account Created", {
+        description: state.data?.message || "Your account has been successfully created. You can now login.",
+      });
       router.push("/login");
     } else if (state?.error) {
-      toast.error(state.error);
+      toast.error("Signup Failed", {
+        description: state.error,
+      });
     }
   }, [state, router]);
 

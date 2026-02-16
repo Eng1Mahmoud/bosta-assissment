@@ -21,10 +21,14 @@ export function LoginForm() {
   useEffect(() => {
     if (state?.success && state.data) {
       login(state.data.token, state.data.username, state.data.displayName);
-      toast.success("Welcome back!");
+      toast.success("Welcome back!", {
+        description: `Logged in as ${state.data.username}.`,
+      });
       router.push(callback);
     } else if (state?.error) {
-      toast.error(state.error);
+      toast.error("Login Failed", {
+        description: state.error,
+      });
     }
   }, [state, router, login, callback]);
 

@@ -6,12 +6,45 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import AddToCartButton from "@/components/products/AddToCartButton";
+import { Metadata } from "next";
+
+type Props = {
+  params: Promise<{ id: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const res = await getProductByIdAction(id);
+
+  if (res.error || !res.data) {
+    return {
+      title: "Product Not Found",
+    };
+  }
+
+  const product = res.data;
+
+  return {
+    title: product.title,
+    description: product.description.substring(0, 160),
+    openGraph: {
+      title: product.title,
+      description: product.description.substring(0, 160),
+      images: [
+        {
+          url: product.image,
+          width: 800,
+          height: 600,
+          alt: product.title,
+        },
+      ],
+    },
+  };
+}
 
 export default async function ProductDetailsPage({
   params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+}: Props) {
   const { id } = await params;
   const res = await getProductByIdAction(id);
 

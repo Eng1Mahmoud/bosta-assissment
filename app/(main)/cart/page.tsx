@@ -1,4 +1,14 @@
 import { CartContent } from "@/components/cart/CartContent";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Your Cart",
+  description: "Review and manage the items in your cart.",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function CartPage() {
   return (

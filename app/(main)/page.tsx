@@ -1,6 +1,12 @@
 import { ArrowRight, ShieldCheck, Zap, Globe } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Experience the fastest and most reliable e-commerce shopping in Egypt with BostaShop.",
+};
 
 export default function Home() {
   return (

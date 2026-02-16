@@ -2,8 +2,22 @@ import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 export const metadata = {
-  title: "Fake Store - Bosta Assessment",
-  description: "A simple product management application",
+  title: {
+    default: "BostaShop ",
+    template: "%s | BostaShop",
+  },
+  description: "A modern e-commerce application built with Next.js 16, React 19, and Tailwind CSS 4.",
+  keywords: ["Next.js", "React", "Tailwind CSS", "E-Commerce", "Bosta"],
+  authors: [{ name: "Bosta Assessment" }],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://bosta-assissment.vercel.app/",
+    siteName: "BostaShop",
+    title: "BostaShop - Modern E-Commerce",
+    description: "A modern e-commerce application built with Next.js 16, React 19, and Tailwind CSS 4.",
+  },
+  
 };
 
 export default function RootLayout({

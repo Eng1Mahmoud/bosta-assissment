@@ -1,6 +1,6 @@
 "use client";
 import { useProductStore } from "@/stores/useProductStore";
-import { ShoppingCart, Plus, Package } from "lucide-react";
+import { ShoppingCart, Plus, Package, Menu } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -49,8 +49,8 @@ export default function Header() {
             Bosta<span className="text-[#e41e26]">Shop</span>
           </span>
         </Link>
-
-        {/* Navigation */}
+        
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-1 bg-zinc-100/50 p-1.5 rounded-2xl dark:bg-zinc-900/50">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
@@ -169,6 +169,26 @@ export default function Header() {
               </Link>
             </Button>
           )}
+
+          {/* Mobile Menu */}
+          <div className="md:hidden">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-[200px]">
+                {navLinks.map((link) => (
+                  <DropdownMenuItem key={link.href} asChild>
+                    <Link href={link.href} className="w-full cursor-pointer">
+                      {link.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
       </div>
     </header>

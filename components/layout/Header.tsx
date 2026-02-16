@@ -95,7 +95,7 @@ export default function Header() {
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="ghost"
-                    className="relative h-10 w-10 sm:h-12 sm:w-12 rounded-full p-0 border-2 border-zinc-100 dark:border-zinc-800 hover:border-[#e41e26] transition-all overflow-hidden group"
+                    className="relative h-10 w-10 sm:h-12 sm:w-12 rounded-full p-0 border-2 border-zinc-100 dark:border-zinc-800 hover:border-[#e41e26] transition-all overflow-hidden group cursor-pointer"
                   >
                     <Avatar className="h-full w-full rounded-full transition-transform duration-300 group-hover:scale-110">
                       <AvatarFallback className="bg-red-50 text-[#e41e26] font-black text-xs sm:text-sm">

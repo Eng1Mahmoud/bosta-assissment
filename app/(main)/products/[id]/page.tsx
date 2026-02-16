@@ -55,18 +55,18 @@ export default async function ProductDetailsPage({
   const product = res.data;
 
   return (
-    <div className="bg-zinc-50 dark:bg-zinc-950 py-6 md:py-12">
+    <div className="py-6 md:py-12">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <Link href="/products">
-            <Button variant="ghost" className="mb-6 md:mb-8 gap-2 -ml-2 text-zinc-500 hover:bg-[#e41e26] hover:text-white transition-colors rounded-xl">
+            <Button variant="ghost" className="mb-6 md:mb-8 gap-2 -ml-2 text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors rounded-xl">
               <ArrowLeft className="h-4 w-4" />
               Back to Products
             </Button>
           </Link>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 bg-white rounded-3xl p-6 sm:p-8 md:p-12 shadow-xl shadow-zinc-200/50 border border-zinc-100 dark:bg-zinc-900/60 dark:border-zinc-800 dark:shadow-zinc-950/50 backdrop-blur-sm">
-            <div className="relative aspect-square flex items-center justify-center bg-zinc-50 dark:bg-zinc-950/50 rounded-2xl p-6 sm:p-8 border border-zinc-100 dark:border-zinc-800 overflow-hidden shadow-inner">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 bg-card rounded-3xl p-6 sm:p-8 md:p-12 shadow-xl border border-border backdrop-blur-sm">
+            <div className="relative aspect-square flex items-center justify-center bg-muted rounded-2xl p-6 sm:p-8 border border-border overflow-hidden shadow-inner">
               <Image
                 src={product.image}
                 alt={product.title}
@@ -78,37 +78,37 @@ export default async function ProductDetailsPage({
 
             <div className="flex flex-col space-y-4 md:space-y-6">
               <div className="space-y-3 md:space-y-4">
-                <Badge className="bg-[#e41e26] hover:bg-[#c31a21] text-white border-none py-1 px-3 capitalize w-fit">
+                <Badge className="bg-primary hover:bg-primary/90 text-primary-foreground border-none py-1 px-3 capitalize w-fit">
                   <Tag className="mr-2 h-3 w-3" />
                   {product.category}
                 </Badge>
-                <h1 className="text-2xl sm:text-3xl md:text-5xl font-black text-zinc-900 tracking-tighter dark:text-white leading-[1.1]">
+                <h1 className="text-2xl sm:text-3xl md:text-5xl font-black text-foreground tracking-tighter leading-[1.1]">
                   {product.title}
                 </h1>
                 <div className="flex items-center gap-2">
                   <div className="flex items-center text-yellow-500">
                     <Star className="h-4 w-4 fill-current" />
-                    <span className="ml-1 font-bold text-zinc-900 dark:text-zinc-100">
+                    <span className="ml-1 font-bold text-foreground">
                       {product.rating?.rate || "4.5"}
                     </span>
                   </div>
-                  <span className="text-zinc-400 text-sm">
+                  <span className="text-muted-foreground text-sm">
                     ({product.rating?.count || "120"} reviews)
                   </span>
                 </div>
               </div>
 
-              <div className="border-y border-zinc-100 py-4 md:py-6 dark:border-zinc-800">
-                <span className="text-3xl md:text-4xl font-extrabold text-[#e41e26]">
+              <div className="border-y border-border py-4 md:py-6">
+                <span className="text-3xl md:text-4xl font-extrabold text-primary">
                   ${product.price.toLocaleString(undefined, { minimumFractionDigits: 2 })}
                 </span>
               </div>
 
               <div className="space-y-2 md:space-y-3">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   Description
                 </h3>
-                <p className="text-zinc-600 leading-relaxed dark:text-zinc-400 text-base md:text-lg">
+                <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
                   {product.description}
                 </p>
               </div>

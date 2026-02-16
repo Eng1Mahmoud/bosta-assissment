@@ -8,10 +8,10 @@ export default function AddToCartButton({ product }: { product: Product }) {
   const { handleAddToCart } = useAddToCart();
 
   return (
-    <Button 
+    <Button
       onClick={() => handleAddToCart(product)}
-      size="lg" 
-      className="w-full md:w-auto bg-[#e41e26] hover:bg-[#c31a21] text-white h-14 px-12 text-lg rounded-xl gap-3"
+      size="lg"
+      className="w-full md:w-auto bg-primary hover:bg-primary/90 text-primary-foreground h-14 px-12 text-lg rounded-xl gap-3"
     >
       <ShoppingCart className="h-5 w-5" />
       Add to Cart

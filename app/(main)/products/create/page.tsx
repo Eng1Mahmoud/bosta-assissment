@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 export default function CreateProductPage() {
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 -left-4 w-72 h-72 bg-red-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob dark:bg-red-900/20" />
-        <div className="absolute top-0 -right-4 w-72 h-72 bg-zinc-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000 dark:bg-zinc-800/20" />
+        <div className="absolute top-0 -left-4 w-72 h-72 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob" />
+        <div className="absolute top-0 -right-4 w-72 h-72 bg-muted rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000" />
       </div>
 
       <div className="relative z-10">

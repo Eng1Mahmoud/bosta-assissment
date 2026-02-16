@@ -6,7 +6,7 @@ import { MobileMenu } from "./header/MobileMenu";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-100/80 bg-white/70 backdrop-blur-xl dark:border-zinc-800/60 dark:bg-zinc-950/80 shadow-sm dark:shadow-zinc-950/50 transition-all duration-300">
+    <header className="sticky top-0 z-50 border-b border-border bg-card/70 backdrop-blur-xl shadow-sm transition-all duration-300 rounded-bl-3xl rounded-br-3xl">
       <div className="container mx-auto flex items-center justify-between px-3 sm:px-6 h-14 sm:h-16 md:h-24">
         <Logo />
         <div className="hidden md:block">
@@ -22,4 +22,3 @@ export default function Header() {
     </header>
   );
 }
-

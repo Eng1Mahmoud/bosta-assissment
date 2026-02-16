@@ -27,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="antialiased font-sans bg-zinc-50 dark:bg-zinc-950">
+      <body className="antialiased font-sans bg-background text-foreground">
         {children}
         <Toaster position="top-center" />
         <ScrollToTop />

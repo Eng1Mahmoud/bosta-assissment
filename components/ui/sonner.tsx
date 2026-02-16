@@ -31,12 +31,12 @@ const Toaster = ({ ...props }: ToasterProps) => {
       toastOptions={{
         classNames: {
           toast:
-            "group toast group-[.toaster]:bg-white group-[.toaster]:text-zinc-950 group-[.toaster]:border-zinc-200 group-[.toaster]:shadow-lg dark:group-[.toaster]:bg-zinc-950 dark:group-[.toaster]:text-zinc-50 dark:group-[.toaster]:border-zinc-800 rounded-2xl p-4",
-          description: "group-[.toast]:text-zinc-500 dark:group-[.toast]:text-zinc-400 font-medium",
+            "group toast group-[.toaster]:bg-card group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg rounded-2xl p-4",
+          description: "group-[.toast]:text-muted-foreground font-medium",
           actionButton:
-            "group-[.toast]:bg-zinc-900 group-[.toast]:text-zinc-50 dark:group-[.toast]:bg-zinc-50 dark:group-[.toast]:text-zinc-900 font-bold",
+            "group-[.toast]:bg-foreground group-[.toast]:text-background font-bold",
           cancelButton:
-            "group-[.toast]:bg-zinc-100 group-[.toast]:text-zinc-500 dark:group-[.toast]:bg-zinc-800 dark:group-[.toast]:text-zinc-400 font-bold",
+            "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground font-bold",
           error: "group-[.toaster]:bg-red-50 group-[.toaster]:border-red-200 group-[.toaster]:text-red-600 dark:group-[.toaster]:bg-red-950/20 dark:group-[.toaster]:border-red-900 dark:group-[.toaster]:text-red-500",
           success: "group-[.toaster]:bg-green-50 group-[.toaster]:border-green-200 group-[.toaster]:text-green-600 dark:group-[.toaster]:bg-green-950/20 dark:group-[.toaster]:border-green-900 dark:group-[.toaster]:text-green-500",
           warning: "group-[.toaster]:bg-amber-50 group-[.toaster]:border-amber-200 group-[.toaster]:text-amber-600 dark:group-[.toaster]:bg-amber-950/20 dark:group-[.toaster]:border-amber-900 dark:group-[.toaster]:text-amber-500",

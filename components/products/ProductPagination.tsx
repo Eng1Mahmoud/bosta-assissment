@@ -20,8 +20,8 @@ export function ProductPagination({ totalProducts }: ProductPaginationProps) {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row items-center justify-between border-t border-zinc-200 pt-6 mt-8 dark:border-zinc-800 gap-4">
-      <p className="text-sm text-zinc-500 order-2 sm:order-1 text-center sm:text-left">
+    <div className="flex flex-col sm:flex-row items-center justify-between border-t border-border pt-6 mt-8 gap-4">
+      <p className="text-sm text-muted-foreground order-2 sm:order-1 text-center sm:text-left">
         Showing <span className="font-semibold">{startIndex + 1}</span> to{" "}
         <span className="font-semibold">{endIndex}</span> of{" "}
         <span className="font-semibold">{totalProducts}</span> entries
@@ -50,7 +50,7 @@ export function ProductPagination({ totalProducts }: ProductPaginationProps) {
                 variant={currentPage === pageNum ? "default" : "outline"}
                 size="sm"
                 className={`h-9 w-9 rounded-lg ${
-                  currentPage === pageNum ? "bg-[#e41e26] hover:bg-[#c31a21]" : ""
+                  currentPage === pageNum ? "bg-primary hover:bg-primary/90 text-primary-foreground" : ""
                 }`}
                 onClick={() => setCurrentPage(pageNum)}
               >

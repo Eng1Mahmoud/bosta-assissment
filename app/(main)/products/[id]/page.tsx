@@ -81,7 +81,7 @@ export default async function ProductDetailsPage({
               </div>
 
               <div className="pt-4 md:pt-6">
-                <AddToCartButton product={product} />
+                  <AddToCartButton product={product} />
               </div>
             </div>
           </div>

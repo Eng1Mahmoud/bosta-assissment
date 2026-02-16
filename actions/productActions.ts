@@ -5,11 +5,10 @@ import { getFormDataObject } from "@/lib/utils";
 import { validateData } from "@/lib/validation";
 import { ActionState } from "../types/action";
 import { Product } from "../types/product";
-
+import { cacheTag } from "next/cache";
+// I use  use "use cashe" to cashe api data and I will revalidate by revalidateTag(tag) or updateTag(tag, data)  when we update this api for products , products-1 or categoryes  but here we use fake api and we don't update data so we just cache we can validate it when start use real api also we can validata it for spisific time by using cacheLife('1h');
 export async function getProductsAction() {
-  return fetchApi<Product[]>("/products", {
-    next: { revalidate: 3600 },
-  });
+  return fetchApi<Product[]>("/products");
 }
 
 export async function getProductByIdAction(id: string) {
@@ -17,6 +16,7 @@ export async function getProductByIdAction(id: string) {
 }
 
 export async function getCategoriesAction() {
+
   return fetchApi<string[]>("/products/categories");
 }
 

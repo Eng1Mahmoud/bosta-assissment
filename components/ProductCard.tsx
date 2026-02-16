@@ -12,7 +12,7 @@ export default function ProductCard({ product }: { product: Product }) {
   const { handleAddToCart } = useAddToCart();
 
   return (
-    <Card className="group overflow-hidden border-zinc-200 bg-white transition-all hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900 flex flex-col h-full w-full max-w-87.5 sm:max-w-full mx-auto sm:mx-0">
+    <Card className="group overflow-hidden border-zinc-200 bg-white transition-all hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900 flex flex-col gap-0 h-full w-full max-w-87.5 sm:max-w-full mx-auto sm:mx-0 py-0 rounded-xl">
       <CardHeader className="relative flex aspect-4/3 items-center justify-center p-3 sm:p-4 overflow-hidden bg-white">
         <Image
           src={product.image}
@@ -46,8 +46,8 @@ export default function ProductCard({ product }: { product: Product }) {
           className="w-full bg-zinc-900 hover:bg-[#e41e26] text-[10px] sm:text-xs font-bold gap-1 sm:gap-2 h-8 sm:h-9 rounded-lg transition-all"
         >
           <ShoppingCart className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
-          <span className="sm:inline">Add to Cart</span>
-          <span className="inline sm:hidden">Add</span>
+         
+          <span className="inline ">Add</span>
         </Button>
       </CardFooter>
     </Card>

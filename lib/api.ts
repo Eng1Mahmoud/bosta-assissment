@@ -1,4 +1,4 @@
-const BASE_URL = "https://fakestoreapi.com";
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL 
 
 export type ApiResponse<T> = {
   data?: T;
@@ -18,19 +18,6 @@ export async function fetchApi<T>(
         ...options?.headers,
       },
     });
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      let errorMessage = `Error ${response.status}: ${response.statusText}`;
-      try {
-        const errorJson = JSON.parse(errorText);
-        errorMessage = errorJson.message || errorMessage;
-      } catch (e) {
-        // Not JSON, use the text or status
-        if (errorText && errorText.length < 100) errorMessage = errorText;
-      }
-      throw new Error(errorMessage);
-    }
 
     const data = await response.json();
     return { data };

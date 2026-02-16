@@ -1,5 +1,4 @@
 "use client";
-
 import { useActionState, useEffect, useState } from "react";
 import { createProductAction, getCategoriesAction } from "@/actions/productActions";
 import { Button } from "@/components/ui/button";

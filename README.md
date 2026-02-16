@@ -194,14 +194,15 @@ This ensures route protection works even before JavaScript loads.
 
 ## Key Architecture Decisions
 
-| Decision                            | Reasoning                                                                                             |
-| ----------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Next.js App Router**              | Server components, automatic code splitting, simplified routing, built-in metadata API                |
-| **Zustand over Redux/Context**      | Minimal boilerplate, selective reactivity, built-in persist middleware, simpler for this scale        |
-| **Server Actions + useActionState** | React 19 pattern for form handling — progressive enhancement, no manual loading state management      |
-| **Zod for validation**              | Type-safe schema validation that integrates naturally with TypeScript and server actions              |
-| **shadcn/ui components**            | Copy-paste Radix primitives — full control over styling, no external runtime dependency               |
-| **components/ui/ separation**       | `components/ui/` contains only shadcn primitives; custom shared components live in `components/` root |
+| Decision                            | Reasoning                                                                                                                                                                                      |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Next.js App Router**              | Server components, automatic code splitting, simplified routing, built-in metadata API                                                                                                         |
+| **Zustand over Redux/Context**      | Minimal boilerplate, selective reactivity, built-in persist middleware, simpler for this scale                                                                                                 |
+| **Server Actions + useActionState** | React 19 pattern for form handling — progressive enhancement, no manual loading state management                                                                                               |
+| **No external form library**        | No React Hook Form or Formik — forms use native React 19 `useActionState` + Server Actions + Zod validation, leveraging the full Next.js form handling capabilities without extra dependencies |
+| **Zod for validation**              | Type-safe schema validation that integrates naturally with TypeScript and server actions                                                                                                       |
+| **shadcn/ui components**            | Copy-paste Radix primitives — full control over styling, no external runtime dependency                                                                                                        |
+| **components/ui/ separation**       | `components/ui/` contains only shadcn primitives; custom shared components live in `components/` root                                                                                          |
 
 ---
 

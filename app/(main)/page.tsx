@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="selection:bg-primary/10 selection:text-primary">
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-6 pb-12 md:pt-16 md:pb-32">
+      <section className="relative overflow-hidden pt-12 pb-8 md:pt-24 md:pb-20">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 -left-4 w-72 h-72 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob" />
           <div className="absolute top-0 -right-4 w-72 h-72 bg-muted rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000" />
@@ -50,7 +50,7 @@ export default function Home() {
             </div>
 
             {/* Stats Bar */}
-            <div className="mt-32 pt-10 border-t border-border w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="mt-10 pt-10 border-t border-border w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
               <div className="p-4 md:p-0">
                 <p className="text-4xl font-black text-foreground mb-1 font-mono">2M+</p>
                 <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest">Active Users</p>

@@ -8,7 +8,7 @@ export type ApiResponse<T> = {
 
 export async function fetchApi<T>(
   endpoint: string,
-  options?: RequestInit
+  options?: RequestInit & { next?: { tags?: string[]; revalidate?: number } }
 ): Promise<ApiResponse<T>> {
   const method = options?.method?.toUpperCase() || "GET";
   const url = `${BASE_URL}${endpoint}`;
@@ -29,7 +29,11 @@ export async function fetchApi<T>(
     // GET requests: Routed through a CDN proxy (codetabs) to bypass the domain block.
     if (method === "GET") {
       const proxiedUrl = `${PROXY_URL}${encodeURIComponent(url)}`;
-      const response = await fetch(proxiedUrl, options);
+      const { next, ...fetchOptions } = options || {};
+      const response = await fetch(proxiedUrl, {
+        ...fetchOptions,
+        next,
+      });
       const data = await response.json();
       return { data };
     }

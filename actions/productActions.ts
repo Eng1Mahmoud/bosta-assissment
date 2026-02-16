@@ -4,8 +4,16 @@ import { fetchApi } from "@/lib/api";
 import { validateData } from "@/lib/validation";
 import { ActionState } from "../types/action";
 import { Product } from "../types/product";
+import { CACHE_TAGS, REVALIDATE_TIME } from "@/lib/cache";
+
 export async function getProductsAction() {
-  return fetchApi<Product[]>("/products");
+  return fetchApi<Product[]>("/products", {
+    cache: "force-cache",
+    next: { 
+      tags: [CACHE_TAGS.products], 
+      revalidate: REVALIDATE_TIME 
+    },
+  });
 }
 
 export async function getProductByIdAction(id: string) {
@@ -13,7 +21,9 @@ export async function getProductByIdAction(id: string) {
 }
 
 export async function getCategoriesAction() {
-  return fetchApi<string[]>("/products/categories");
+  return fetchApi<string[]>("/products/categories", {
+    next: { tags: [CACHE_TAGS.categories], revalidate: REVALIDATE_TIME },
+  });
 }
 
 export async function createProductAction(

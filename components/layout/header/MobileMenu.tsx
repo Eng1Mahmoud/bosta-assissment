@@ -9,8 +9,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { navLinks } from "./DesktopNav";
+import { useAuthStore } from "@/stores/useAuthStore";
 
 export function MobileMenu() {
+  const user = useAuthStore((state) => state.user);
+
   return (
     <div className="md:hidden">
         <DropdownMenu>
@@ -27,6 +30,13 @@ export function MobileMenu() {
                 </Link>
               </DropdownMenuItem>
             ))}
+            {user && (
+              <DropdownMenuItem asChild className="cursor-pointer hover:bg-muted rounded-lg mx-1">
+                <Link href="/products/create" className="w-full py-2 px-3 text-sm font-semibold text-popover-foreground">
+                  Add Product
+                </Link>
+              </DropdownMenuItem>
+            )}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

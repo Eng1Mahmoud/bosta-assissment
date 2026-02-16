@@ -26,6 +26,7 @@ A modern e-commerce application built with **Next.js 16**, **React 19**, **TypeS
 | Validation       | Zod 4                                         |
 | Notifications    | Sonner                                        |
 | Icons            | Lucide React                                  |
+| Code Quality     | Prettier + ESLint + Husky + lint-staged       |
 
 ---
 
@@ -47,7 +48,14 @@ npm run dev
 # 4. Build for production
 npm run build
 npm start
+
+# 5. Format & lint (manual)
+npm run format        # Format all files with Prettier
+npm run lint          # Lint all files with ESLint
+npm run format:check  # Check formatting without writing
 ```
+
+> **Note:** Husky + lint-staged runs Prettier and ESLint automatically on every `git commit` — no manual step needed.
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
@@ -142,6 +150,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 | Custom Hooks                  | `useCart` (selectors), `useCreateProduct` (form logic), `useAddToCart` (auth guard + cart)                           |
 | Glassmorphic UI               | Backdrop blur, semi-transparent cards, mesh gradient backgrounds                                                     |
 | Accessibility                 | `motion-reduce` support, `sr-only` labels, semantic HTML                                                             |
+| Code Quality Automation       | Husky pre-commit hook + lint-staged runs Prettier formatting and ESLint fixes automatically on every commit          |
 
 ---
 

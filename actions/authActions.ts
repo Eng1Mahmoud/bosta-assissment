@@ -2,16 +2,15 @@
 import { fetchApi } from "@/lib/api";
 import { ActionState } from "../types/action";
 import { User } from "../types/auth";
-import { loginSchema, LoginFormValues, signupSchema, SignupFormValues } from "../schemas/auth";
+import { loginSchema, signupSchema, SignupFormValues } from "../schemas/auth";
 import { validateData } from "@/lib/validation";
-import { getFormDataObject } from "@/lib/utils";
 import { cookies } from "next/headers";
 
 export async function loginAction(
   prevState: unknown,
   formData: FormData
 ): Promise<ActionState<{ token: string; username: string; displayName: string }>> {
-  const rawData = getFormDataObject<LoginFormValues>(formData);
+  const rawData = Object.fromEntries(formData.entries());
   const validated = validateData(loginSchema, rawData);
 
   if (!validated.success) {
@@ -75,7 +74,7 @@ export async function signupAction(
   prevState: unknown,
   formData: FormData
 ): Promise<ActionState<{ message: string }>> {
-  const rawData = getFormDataObject<SignupFormValues>(formData);
+  const rawData = Object.fromEntries(formData.entries());
   const validated = validateData(signupSchema, rawData);
 
   if (!validated.success) {

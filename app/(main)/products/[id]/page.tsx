@@ -5,7 +5,7 @@ import { ArrowLeft, Tag, Star } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import AddToCartButton from "@/components/AddToCartButton";
+import AddToCartButton from "@/components/products/AddToCartButton";
 
 export default async function ProductDetailsPage({
   params,

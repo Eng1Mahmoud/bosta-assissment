@@ -29,7 +29,7 @@ export const useProductStore = create<ProductState>()(
       products: [],
       filteredProducts: [],
       cart: [],
-      loading: false,
+      loading: true,
       error: null,
       sortBy: null,
       selectedCategory: null,

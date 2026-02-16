@@ -18,7 +18,6 @@ export const metadata = {
     title: "BostaShop - Modern E-Commerce",
     description: "A modern e-commerce application built with Next.js 16, React 19, and Tailwind CSS 4.",
   },
-  
 };
 
 export default function RootLayout({
@@ -27,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="antialiased font-sans bg-zinc-50 dark:bg-zinc-950">
         {children}
         <Toaster position="top-center" />

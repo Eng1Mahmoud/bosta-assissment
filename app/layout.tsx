@@ -1,4 +1,5 @@
 import { Toaster } from "@/components/ui/sonner";
+import { ScrollToTop } from "@/components/scroll-to-top";
 import "./globals.css";
 
 export const metadata = {
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className="antialiased font-sans bg-zinc-50 dark:bg-zinc-950">
         {children}
         <Toaster position="top-center" />
+        <ScrollToTop />
       </body>
     </html>
   );

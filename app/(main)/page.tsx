@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="bg-white dark:bg-zinc-950 selection:bg-red-100 selection:text-red-900">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white pt-10 pb-20 md:pt-16 md:pb-32 dark:bg-zinc-950">
+      <section className="relative overflow-hidden bg-white pt-6 pb-12 md:pt-16 md:pb-32 dark:bg-zinc-950">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 -left-4 w-72 h-72 bg-red-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob dark:bg-red-900/20" />
           <div className="absolute top-0 -right-4 w-72 h-72 bg-zinc-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000 dark:bg-zinc-800/20" />
@@ -25,17 +25,17 @@ export default function Home() {
               <Zap className="h-4 w-4 fill-current" />
               Leading E-commerce Logistics in Egypt
             </div>
-            
+
             <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tighter text-zinc-900 dark:text-white mb-6 md:mb-10 leading-tight md:leading-[0.9]">
               Shop with <br />
               <span className="text-[#e41e26] italic">Confidence.</span>
             </h1>
-            
+
             <p className="text-lg md:text-2xl text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-3xl mb-10 md:mb-14 font-medium">
               Unlock a world of quality products delivered through Egypt&apos;s most reliable logistics network. Experience the Bosta speed today.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
+
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
               <Link href="/products" className="w-full sm:w-auto">
                 <Button className="w-full sm:w-auto h-16 md:h-20 px-8 md:px-12 text-lg md:text-xl font-black bg-[#e41e26] hover:bg-[#c31a21] text-white rounded-2xl md:rounded-3xl shadow-2xl shadow-red-500/40 gap-3 transition-all hover:scale-105 active:scale-95 group">
                   Browse Catalog
@@ -50,7 +50,7 @@ export default function Home() {
             </div>
 
             {/* Stats Bar */}
-            <div className="mt-32 pt-20 border-t border-zinc-100 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 dark:border-zinc-900">
+            <div className="mt-32 pt-10 border-t border-zinc-100 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 dark:border-zinc-900">
               <div className="p-4 md:p-0">
                 <p className="text-4xl font-black text-zinc-900 dark:text-white mb-1 font-mono">2M+</p>
                 <p className="text-sm font-bold text-zinc-400 uppercase tracking-widest">Active Users</p>
@@ -73,13 +73,13 @@ export default function Home() {
       </section>
 
       {/* Features Grid */}
-      <section className="bg-zinc-50 dark:bg-zinc-900/50 py-16 md:py-32 border-y border-zinc-100 dark:border-zinc-900">
+      <section className="bg-zinc-50 dark:bg-zinc-900/50 py-10 md:py-32 border-y border-zinc-100 dark:border-zinc-900">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12 md:mb-20">
             <h2 className="text-3xl md:text-4xl font-black mb-4">Why Shop at Bosta?</h2>
             <p className="text-zinc-500 dark:text-zinc-400 font-medium">We bridge the gap between excellence and convenience.</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {[
               {
@@ -111,12 +111,12 @@ export default function Home() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-16 md:py-32">
+      <section className="py-10 md:py-32">
         <div className="container mx-auto px-6">
           <div className="bg-[#e41e26] rounded-[2rem] md:rounded-[3rem] p-8 sm:p-12 md:p-24 relative overflow-hidden shadow-2xl shadow-red-500/20">
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-white opacity-5 rounded-full" />
             <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 bg-black opacity-5 rounded-full" />
-            
+
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 text-center md:text-left">
               <div>
                 <h2 className="text-3xl md:text-6xl font-black text-white mb-4 md:mb-6 leading-tight">

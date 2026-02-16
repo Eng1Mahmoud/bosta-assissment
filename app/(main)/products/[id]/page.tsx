@@ -65,8 +65,8 @@ export default async function ProductDetailsPage({
             </Button>
           </Link>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 bg-white rounded-3xl p-6 sm:p-8 md:p-12 shadow-sm border border-zinc-200 dark:bg-zinc-900 dark:border-zinc-800">
-            <div className="relative aspect-square flex items-center justify-center bg-white rounded-2xl p-6 sm:p-8 border border-zinc-100 overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 bg-white rounded-3xl p-6 sm:p-8 md:p-12 shadow-xl shadow-zinc-200/50 border border-zinc-100 dark:bg-zinc-900/60 dark:border-zinc-800 dark:shadow-zinc-950/50 backdrop-blur-sm">
+            <div className="relative aspect-square flex items-center justify-center bg-zinc-50 dark:bg-zinc-950/50 rounded-2xl p-6 sm:p-8 border border-zinc-100 dark:border-zinc-800 overflow-hidden shadow-inner">
               <Image
                 src={product.image}
                 alt={product.title}
@@ -82,7 +82,7 @@ export default async function ProductDetailsPage({
                   <Tag className="mr-2 h-3 w-3" />
                   {product.category}
                 </Badge>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-zinc-900 tracking-tight dark:text-zinc-100 leading-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-5xl font-black text-zinc-900 tracking-tighter dark:text-white leading-[1.1]">
                   {product.title}
                 </h1>
                 <div className="flex items-center gap-2">
@@ -114,7 +114,7 @@ export default async function ProductDetailsPage({
               </div>
 
               <div className="pt-4 md:pt-6">
-                  <AddToCartButton product={product} />
+                <AddToCartButton product={product} />
               </div>
             </div>
           </div>

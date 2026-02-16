@@ -17,7 +17,7 @@ export default function Footer() {
         </p>
         <div className="h-1 w-10 md:w-12 bg-zinc-100 mb-6 md:mb-8 dark:bg-zinc-900" />
         <p className="text-zinc-400 text-[10px] md:text-xs font-medium px-4">
-          &copy; 2026 Bosta Assessment Store. Made with 🔥 for a better shopping experience.
+          &copy; 2026 Bosta Assessment Store. Made with ❤️ by Mahmoud Mohamed. All rights reserved.
         </p>
       </div>
     </footer>

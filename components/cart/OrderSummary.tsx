@@ -36,7 +36,10 @@ export function OrderSummary() {
           Checkout Now
         </Button>
 
-        <Link href="/products" className="flex items-center justify-center gap-2 mt-6 text-sm opacity-60 hover:opacity-100 transition-opacity">
+        <Link
+          href="/products"
+          className="flex items-center justify-center gap-2 mt-6 text-sm opacity-60 hover:opacity-100 transition-opacity"
+        >
           <ArrowLeft className="h-4 w-4" />
           Continue Shopping
         </Link>

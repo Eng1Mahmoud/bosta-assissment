@@ -1,17 +1,17 @@
 "use server";
-import { productSchema } from "../schemas/product";
+import { productSchema } from "@/schemas/product";
 import { fetchApi } from "@/lib/api";
 import { validateData } from "@/lib/validation";
-import { ActionState } from "../types/action";
-import { Product } from "../types/product";
+import { ActionState } from "@/types/action";
+import { Product } from "@/types/product";
 import { CACHE_TAGS, REVALIDATE_TIME } from "@/lib/cache";
 
 export async function getProductsAction() {
   return fetchApi<Product[]>("/products", {
     cache: "force-cache",
-    next: { 
-      tags: [CACHE_TAGS.products], 
-      revalidate: REVALIDATE_TIME 
+    next: {
+      tags: [CACHE_TAGS.products],
+      revalidate: REVALIDATE_TIME,
     },
   });
 }
@@ -28,9 +28,9 @@ export async function getCategoriesAction() {
 
 export async function createProductAction(
   _prevState: ActionState<Product>,
-  formData: FormData
+  formData: FormData,
 ): Promise<ActionState<Product>> {
-  const rawData = Object.fromEntries(formData.entries()) ;
+  const rawData = Object.fromEntries(formData.entries());
   const validated = validateData(productSchema, rawData);
 
   if (!validated.success) {
@@ -51,4 +51,3 @@ export async function createProductAction(
 
   return { success: true, data: result.data };
 }
-

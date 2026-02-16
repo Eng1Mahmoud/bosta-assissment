@@ -1,7 +1,13 @@
 import { useProductStore } from "@/stores/useProductStore";
 import { CategorySelect } from "@/components/category-select";
 import { Button } from "@/components/ui/button";
-import { ArrowUpDown, ArrowUp, ArrowDown, Filter, PlusCircle } from "lucide-react";
+import {
+  ArrowUpDown,
+  ArrowUp,
+  ArrowDown,
+  Filter,
+  PlusCircle,
+} from "lucide-react";
 import Link from "next/link";
 
 interface ProductFiltersProps {
@@ -9,7 +15,8 @@ interface ProductFiltersProps {
 }
 
 export function ProductFilters({ categories }: ProductFiltersProps) {
-  const { sortBy, selectedCategory, setSortBy, setCategory } = useProductStore();
+  const { sortBy, selectedCategory, setSortBy, setCategory } =
+    useProductStore();
 
   const toggleSort = () => {
     if (sortBy === "price-asc") setSortBy("price-desc");

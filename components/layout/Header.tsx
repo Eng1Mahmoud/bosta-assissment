@@ -1,8 +1,8 @@
 "use client";
-import { DesktopNav } from "./header/DesktopNav";
-import { UserActions } from "./header/UserActions";
-import { Logo } from "./header/Logo";
-import { MobileMenu } from "./header/MobileMenu";
+import { DesktopNav } from "@/components/layout/header/DesktopNav";
+import { UserActions } from "@/components/layout/header/UserActions";
+import { Logo } from "@/components/layout/header/Logo";
+import { MobileMenu } from "@/components/layout/header/MobileMenu";
 
 export default function Header() {
   return (

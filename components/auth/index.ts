@@ -1,2 +1,2 @@
-export { LoginForm } from "./LoginForm";
-export { SignupForm } from "./SignupForm";
+export { LoginForm } from "@/components/auth/LoginForm";
+export { SignupForm } from "@/components/auth/SignupForm";

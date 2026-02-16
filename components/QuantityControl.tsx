@@ -8,7 +8,11 @@ interface QuantityControlProps {
   onDecrement: () => void;
 }
 
-export function QuantityControl({ quantity, onIncrement, onDecrement }: QuantityControlProps) {
+export function QuantityControl({
+  quantity,
+  onIncrement,
+  onDecrement,
+}: QuantityControlProps) {
   return (
     <div className="flex items-center gap-1.5 bg-muted p-1 rounded-xl w-auto">
       <button
@@ -20,7 +24,9 @@ export function QuantityControl({ quantity, onIncrement, onDecrement }: Quantity
       >
         <Minus className="h-3 w-3" />
       </button>
-      <span className="text-sm font-bold w-6 text-center text-foreground">{quantity}</span>
+      <span className="text-sm font-bold w-6 text-center text-foreground">
+        {quantity}
+      </span>
       <button
         onClick={(e) => {
           e.preventDefault();

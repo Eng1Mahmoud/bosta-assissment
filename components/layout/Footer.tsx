@@ -17,7 +17,8 @@ export default function Footer() {
         </p>
         <div className="h-1 w-10 md:w-12 bg-border mb-6 md:mb-8 rounded-full" />
         <p className="text-muted-foreground text-[10px] md:text-xs font-medium px-4">
-          &copy; 2026 Bosta Assessment Store. Made with ❤️ by Mahmoud Mohamed. All rights reserved.
+          &copy; 2026 Bosta Assessment Store. Made with ❤️ by Mahmoud Mohamed.
+          All rights reserved.
         </p>
       </div>
     </footer>

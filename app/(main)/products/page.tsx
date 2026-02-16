@@ -18,7 +18,9 @@ export default function ProductsPage() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex items-center gap-3 mb-10 group">
           <div className="h-8 w-2 bg-primary rounded-full shadow-lg shadow-primary/30 animate-pulse" />
-          <h2 className="text-3xl font-black text-foreground tracking-tight">Our Products</h2>
+          <h2 className="text-3xl font-black text-foreground tracking-tight">
+            Our Products
+          </h2>
         </div>
         <ProductList />
       </div>

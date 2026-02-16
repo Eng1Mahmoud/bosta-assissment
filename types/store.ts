@@ -1,4 +1,4 @@
-import { Product } from "./product";
+import { Product } from "@/types/product";
 
 export interface CartItem extends Product {
   quantity: number;
@@ -21,7 +21,7 @@ export interface ProductState {
   setSortBy: (sort: "price-asc" | "price-desc" | null) => void;
   setCategory: (category: string | null) => void;
   setCurrentPage: (page: number) => void;
-  
+
   // Cart Actions
   addToCart: (product: Product) => void;
   removeFromCart: (productId: number) => void;

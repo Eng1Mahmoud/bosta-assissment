@@ -151,9 +151,21 @@
   body {
     @apply bg-background text-foreground;
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -20%, var(--gradient-top), transparent 50%),
-      radial-gradient(ellipse 60% 40% at 100% 0%, var(--gradient-side), transparent 50%),
-      radial-gradient(ellipse 50% 30% at 0% 100%, var(--gradient-bottom), transparent 50%);
+      radial-gradient(
+        ellipse 80% 50% at 50% -20%,
+        var(--gradient-top),
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 60% 40% at 100% 0%,
+        var(--gradient-side),
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 50% 30% at 0% 100%,
+        var(--gradient-bottom),
+        transparent 50%
+      );
     background-attachment: fixed;
   }
 }

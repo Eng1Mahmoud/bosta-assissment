@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   CircleCheckIcon,
@@ -6,12 +6,12 @@ import {
   Loader2Icon,
   OctagonXIcon,
   TriangleAlertIcon,
-} from "lucide-react"
-import { useTheme } from "next-themes"
-import { Toaster as Sonner, type ToasterProps } from "sonner"
+} from "lucide-react";
+import { useTheme } from "next-themes";
+import { Toaster as Sonner, type ToasterProps } from "sonner";
 
 const Toaster = ({ ...props }: ToasterProps) => {
-  const { theme = "system" } = useTheme()
+  const { theme = "system" } = useTheme();
 
   return (
     <Sonner
@@ -37,9 +37,12 @@ const Toaster = ({ ...props }: ToasterProps) => {
             "group-[.toast]:bg-foreground group-[.toast]:text-background font-bold",
           cancelButton:
             "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground font-bold",
-          error: "group-[.toaster]:bg-red-50 group-[.toaster]:border-red-200 group-[.toaster]:text-red-600 dark:group-[.toaster]:bg-red-950/20 dark:group-[.toaster]:border-red-900 dark:group-[.toaster]:text-red-500",
-          success: "group-[.toaster]:bg-green-50 group-[.toaster]:border-green-200 group-[.toaster]:text-green-600 dark:group-[.toaster]:bg-green-950/20 dark:group-[.toaster]:border-green-900 dark:group-[.toaster]:text-green-500",
-          warning: "group-[.toaster]:bg-amber-50 group-[.toaster]:border-amber-200 group-[.toaster]:text-amber-600 dark:group-[.toaster]:bg-amber-950/20 dark:group-[.toaster]:border-amber-900 dark:group-[.toaster]:text-amber-500",
+          error:
+            "group-[.toaster]:bg-red-50 group-[.toaster]:border-red-200 group-[.toaster]:text-red-600 dark:group-[.toaster]:bg-red-950/20 dark:group-[.toaster]:border-red-900 dark:group-[.toaster]:text-red-500",
+          success:
+            "group-[.toaster]:bg-green-50 group-[.toaster]:border-green-200 group-[.toaster]:text-green-600 dark:group-[.toaster]:bg-green-950/20 dark:group-[.toaster]:border-green-900 dark:group-[.toaster]:text-green-500",
+          warning:
+            "group-[.toaster]:bg-amber-50 group-[.toaster]:border-amber-200 group-[.toaster]:text-amber-600 dark:group-[.toaster]:bg-amber-950/20 dark:group-[.toaster]:border-amber-900 dark:group-[.toaster]:text-amber-500",
           info: "group-[.toaster]:bg-blue-50 group-[.toaster]:border-blue-200 group-[.toaster]:text-blue-600 dark:group-[.toaster]:bg-blue-950/20 dark:group-[.toaster]:border-blue-900 dark:group-[.toaster]:text-blue-500",
         },
       }}
@@ -53,7 +56,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
       }
       {...props}
     />
-  )
-}
+  );
+};
 
-export { Toaster }
+export { Toaster };

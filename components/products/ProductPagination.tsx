@@ -50,7 +50,9 @@ export function ProductPagination({ totalProducts }: ProductPaginationProps) {
                 variant={currentPage === pageNum ? "default" : "outline"}
                 size="sm"
                 className={`h-9 w-9 rounded-lg ${
-                  currentPage === pageNum ? "bg-primary hover:bg-primary/90 text-primary-foreground" : ""
+                  currentPage === pageNum
+                    ? "bg-primary hover:bg-primary/90 text-primary-foreground"
+                    : ""
                 }`}
                 onClick={() => setCurrentPage(pageNum)}
               >

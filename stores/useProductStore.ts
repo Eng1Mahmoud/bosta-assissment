@@ -1,12 +1,12 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import { ProductState } from "../types/store";
-import { Product } from "../types/product";
+import { ProductState } from "@/types/store";
+import { Product } from "@/types/product";
 
 const applyFiltersAndSort = (
   products: Product[],
   category: string | null,
-  sort: "price-asc" | "price-desc" | null
+  sort: "price-asc" | "price-desc" | null,
 ) => {
   let filtered = [...products];
 
@@ -39,7 +39,11 @@ export const useProductStore = create<ProductState>()(
       setProducts: (products) =>
         set((state) => ({
           products,
-          filteredProducts: applyFiltersAndSort(products, state.selectedCategory, state.sortBy),
+          filteredProducts: applyFiltersAndSort(
+            products,
+            state.selectedCategory,
+            state.sortBy,
+          ),
         })),
 
       setLoading: (loading) => set({ loading }),
@@ -48,14 +52,22 @@ export const useProductStore = create<ProductState>()(
       setSortBy: (sort) =>
         set((state) => ({
           sortBy: sort,
-          filteredProducts: applyFiltersAndSort(state.products, state.selectedCategory, sort),
+          filteredProducts: applyFiltersAndSort(
+            state.products,
+            state.selectedCategory,
+            sort,
+          ),
           currentPage: 1,
         })),
 
       setCategory: (category) =>
         set((state) => ({
           selectedCategory: category,
-          filteredProducts: applyFiltersAndSort(state.products, category, state.sortBy),
+          filteredProducts: applyFiltersAndSort(
+            state.products,
+            category,
+            state.sortBy,
+          ),
           currentPage: 1,
         })),
 
@@ -63,13 +75,15 @@ export const useProductStore = create<ProductState>()(
 
       addToCart: (product) =>
         set((state) => {
-          const existingItem = state.cart.find((item) => item.id === product.id);
+          const existingItem = state.cart.find(
+            (item) => item.id === product.id,
+          );
           if (existingItem) {
             return {
               cart: state.cart.map((item) =>
                 item.id === product.id
                   ? { ...item, quantity: item.quantity + 1 }
-                  : item
+                  : item,
               ),
             };
           }
@@ -84,7 +98,9 @@ export const useProductStore = create<ProductState>()(
       updateQuantity: (productId, quantity) =>
         set((state) => ({
           cart: state.cart.map((item) =>
-            item.id === productId ? { ...item, quantity: Math.max(1, quantity) } : item
+            item.id === productId
+              ? { ...item, quantity: Math.max(1, quantity) }
+              : item,
           ),
         })),
 
@@ -94,6 +110,6 @@ export const useProductStore = create<ProductState>()(
       name: "bosta-shop-storage",
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({ cart: state.cart }), // Only persist the cart
-    }
-  )
+    },
+  ),
 );

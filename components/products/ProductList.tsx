@@ -1,13 +1,16 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useProductStore } from "@/stores/useProductStore";
-import ProductCard from "./ProductCard";
-import { getProductsAction, getCategoriesAction } from "@/actions/productActions";
+import ProductCard from "@/components/products/ProductCard";
+import {
+  getProductsAction,
+  getCategoriesAction,
+} from "@/actions/productActions";
 import { Button } from "@/components/ui/button";
-import { ProductFilters } from "./ProductFilters";
-import { ProductPagination } from "./ProductPagination";
-import { ProductSkeleton } from "./ProductSkeleton";
-import { EmptyProducts } from "./EmptyProducts";
+import { ProductFilters } from "@/components/products/ProductFilters";
+import { ProductPagination } from "@/components/products/ProductPagination";
+import { ProductSkeleton } from "@/components/products/ProductSkeleton";
+import { EmptyProducts } from "@/components/products/EmptyProducts";
 
 export default function ProductList() {
   const {
@@ -47,7 +50,7 @@ export default function ProductList() {
 
   const paginatedProducts = filteredProducts.slice(
     (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
+    currentPage * itemsPerPage,
   );
 
   if (error) {

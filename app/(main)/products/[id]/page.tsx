@@ -42,9 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function ProductDetailsPage({
-  params,
-}: Props) {
+export default async function ProductDetailsPage({ params }: Props) {
   const { id } = await params;
   const res = await getProductByIdAction(id);
 
@@ -59,7 +57,10 @@ export default async function ProductDetailsPage({
       <div className="container mx-auto px-4 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <Link href="/products">
-            <Button variant="ghost" className="mb-6 md:mb-8 gap-2 -ml-2 text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors rounded-xl">
+            <Button
+              variant="ghost"
+              className="mb-6 md:mb-8 gap-2 -ml-2 text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors rounded-xl"
+            >
               <ArrowLeft className="h-4 w-4" />
               Back to Products
             </Button>
@@ -100,7 +101,10 @@ export default async function ProductDetailsPage({
 
               <div className="border-y border-border py-4 md:py-6">
                 <span className="text-3xl md:text-4xl font-extrabold text-primary">
-                  ${product.price.toLocaleString(undefined, { minimumFractionDigits: 2 })}
+                  $
+                  {product.price.toLocaleString(undefined, {
+                    minimumFractionDigits: 2,
+                  })}
                 </span>
               </div>
 

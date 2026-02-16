@@ -17,7 +17,9 @@ export function SignupForm() {
   useEffect(() => {
     if (state?.success) {
       toast.success("Account Created", {
-        description: state.data?.message || "Your account has been successfully created. You can now login.",
+        description:
+          state.data?.message ||
+          "Your account has been successfully created. You can now login.",
       });
       router.push("/login");
     } else if (state?.error) {
@@ -30,7 +32,9 @@ export function SignupForm() {
   return (
     <form action={formAction} className="space-y-4">
       <div className="space-y-1">
-        <label className="text-sm font-bold text-foreground ml-1 transition-colors">Full Name</label>
+        <label className="text-sm font-bold text-foreground ml-1 transition-colors">
+          Full Name
+        </label>
         <div className="relative group">
           <UserCircle className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
           <Input
@@ -43,7 +47,9 @@ export function SignupForm() {
       </div>
 
       <div className="space-y-1">
-        <label className="text-sm font-bold text-foreground ml-1 transition-colors">Username</label>
+        <label className="text-sm font-bold text-foreground ml-1 transition-colors">
+          Username
+        </label>
         <div className="relative group">
           <User className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
           <Input
@@ -56,7 +62,9 @@ export function SignupForm() {
       </div>
 
       <div className="space-y-1">
-        <label className="text-sm font-bold text-foreground ml-1 transition-colors">Email</label>
+        <label className="text-sm font-bold text-foreground ml-1 transition-colors">
+          Email
+        </label>
         <div className="relative group">
           <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
           <Input
@@ -70,7 +78,9 @@ export function SignupForm() {
       </div>
 
       <div className="space-y-1">
-        <label className="text-sm font-bold text-foreground ml-1 transition-colors">Password</label>
+        <label className="text-sm font-bold text-foreground ml-1 transition-colors">
+          Password
+        </label>
         <div className="relative group">
           <Lock className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
           <Input
@@ -83,11 +93,19 @@ export function SignupForm() {
         <FieldError errors={state?.fieldErrors?.password} />
       </div>
 
-      <SubmitButton isPending={isPending} label="Sign Up" pendingLabel="Registering..." className="mt-6" />
+      <SubmitButton
+        isPending={isPending}
+        label="Sign Up"
+        pendingLabel="Registering..."
+        className="mt-6"
+      />
 
       <p className="text-center text-sm text-muted-foreground mt-6">
         Already have an account?{" "}
-        <Link href="/login" className="text-primary font-bold hover:underline transition-colors">
+        <Link
+          href="/login"
+          className="text-primary font-bold hover:underline transition-colors"
+        >
           Login instead
         </Link>
       </p>

@@ -114,10 +114,7 @@ export function UserActions() {
             asChild
             className="hidden lg:flex bg-red-500 hover:bg-red-600 text-white font-black rounded-lg h-10 px-4 shadow-lg shadow-red-500/25 transition-all active:scale-95 text-sm"
           >
-            <Link
-              href="/products/create"
-              className="flex items-center gap-2"
-            >
+            <Link href="/products/create" className="flex items-center gap-2">
               <Plus className="h-4 w-4" />
               <span>Add Product</span>
             </Link>
@@ -136,5 +133,5 @@ export function UserActions() {
         </Button>
       )}
     </div>
-  )
+  );
 }

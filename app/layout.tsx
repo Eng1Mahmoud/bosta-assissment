@@ -7,7 +7,8 @@ export const metadata = {
     default: "BostaShop ",
     template: "%s | BostaShop",
   },
-  description: "A modern e-commerce application built with Next.js 16, React 19, and Tailwind CSS 4.",
+  description:
+    "A modern e-commerce application built with Next.js 16, React 19, and Tailwind CSS 4.",
   keywords: ["Next.js", "React", "Tailwind CSS", "E-Commerce", "Bosta"],
   authors: [{ name: "Bosta Assessment" }],
   openGraph: {
@@ -16,7 +17,8 @@ export const metadata = {
     url: "https://bosta-assissment.vercel.app/",
     siteName: "BostaShop",
     title: "BostaShop - Modern E-Commerce",
-    description: "A modern e-commerce application built with Next.js 16, React 19, and Tailwind CSS 4.",
+    description:
+      "A modern e-commerce application built with Next.js 16, React 19, and Tailwind CSS 4.",
   },
 };
 
@@ -35,4 +37,3 @@ export default function RootLayout({
     </html>
   );
 }
-

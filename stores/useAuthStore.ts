@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import { AuthState, User } from "../types/auth";
+import { AuthState, User } from "@/types/auth";
 
 export const useAuthStore = create<AuthState>()(
   persist(
@@ -10,11 +10,11 @@ export const useAuthStore = create<AuthState>()(
       loading: false,
       error: null,
 
-      login: (token, username, displayName) => 
-        set({ 
-          token, 
+      login: (token, username, displayName) =>
+        set({
+          token,
           user: { username, displayName: displayName || username } as User,
-          error: null 
+          error: null,
         }),
 
       logout: () => set({ user: null, token: null, error: null }),
@@ -24,6 +24,6 @@ export const useAuthStore = create<AuthState>()(
     {
       name: "bosta-auth-storage",
       storage: createJSONStorage(() => localStorage),
-    }
-  )
+    },
+  ),
 );

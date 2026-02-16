@@ -3,8 +3,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "Products", href: "/products" },
+  { label: "Home", href: "/" },
+  { label: "Products", href: "/products" },
 ];
 
 export function DesktopNav() {

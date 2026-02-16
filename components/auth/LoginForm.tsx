@@ -36,7 +36,9 @@ export function LoginForm() {
   return (
     <form action={formAction} className="space-y-6">
       <div className="space-y-2">
-        <label className="text-sm font-bold text-foreground ml-1 transition-colors">Username</label>
+        <label className="text-sm font-bold text-foreground ml-1 transition-colors">
+          Username
+        </label>
         <div className="relative group">
           <User className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
           <Input
@@ -50,7 +52,9 @@ export function LoginForm() {
       </div>
 
       <div className="space-y-2">
-        <label className="text-sm font-bold text-foreground ml-1 transition-colors">Password</label>
+        <label className="text-sm font-bold text-foreground ml-1 transition-colors">
+          Password
+        </label>
         <div className="relative group">
           <Lock className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
           <Input
@@ -64,11 +68,19 @@ export function LoginForm() {
         <FieldError errors={state?.fieldErrors?.password} />
       </div>
 
-      <SubmitButton isPending={isPending} label="Login" pendingLabel="Authenticating..." className="mt-4" />
+      <SubmitButton
+        isPending={isPending}
+        label="Login"
+        pendingLabel="Authenticating..."
+        className="mt-4"
+      />
 
       <p className="text-center text-sm text-muted-foreground mt-6">
         Don&apos;t have an account?{" "}
-        <Link href="/signup" className="text-primary font-bold hover:underline transition-colors">
+        <Link
+          href="/signup"
+          className="text-primary font-bold hover:underline transition-colors"
+        >
           Sign up
         </Link>
       </p>

@@ -6,10 +6,12 @@ export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Define protected routes
-  const isProtectedRoute = pathname.startsWith("/cart") || pathname.startsWith("/products/create");
+  const isProtectedRoute =
+    pathname.startsWith("/cart") || pathname.startsWith("/products/create");
 
   // Define auth routes (only accessible if NOT logged in)
-  const isAuthRoute = pathname.startsWith("/login") || pathname.startsWith("/signup");
+  const isAuthRoute =
+    pathname.startsWith("/login") || pathname.startsWith("/signup");
 
   if (isProtectedRoute && !token) {
     const loginUrl = new URL("/login", request.url);

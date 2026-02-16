@@ -1,9 +1,9 @@
 "use client";
 
 import { useProductStore } from "@/stores/useProductStore";
-import { EmptyCart } from "./EmptyCart";
-import { CartItems } from "./CartItems";
-import { OrderSummary } from "./OrderSummary";
+import { EmptyCart } from "@/components/cart/EmptyCart";
+import { CartItems } from "@/components/cart/CartItems";
+import { OrderSummary } from "@/components/cart/OrderSummary";
 
 export function CartView() {
   const cart = useProductStore((state) => state.cart);

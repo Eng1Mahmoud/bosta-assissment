@@ -24,12 +24,19 @@ export function EmptyState({
           <Icon className="h-8 sm:h-12 w-8 sm:w-12 text-muted-foreground" />
         </div>
       )}
-      <h2 className="text-lg sm:text-xl font-bold text-foreground mb-2 text-center">{title}</h2>
+      <h2 className="text-lg sm:text-xl font-bold text-foreground mb-2 text-center">
+        {title}
+      </h2>
       {description && (
-        <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 text-center">{description}</p>
+        <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 text-center">
+          {description}
+        </p>
       )}
       {actionLabel && actionHref && (
-        <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-xl px-6 sm:px-8 text-sm sm:text-base">
+        <Button
+          asChild
+          className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-xl px-6 sm:px-8 text-sm sm:text-base"
+        >
           <Link href={actionHref}>{actionLabel}</Link>
         </Button>
       )}

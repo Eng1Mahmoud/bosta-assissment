@@ -1,15 +1,17 @@
 "use server";
 import { fetchApi } from "@/lib/api";
-import { ActionState } from "../types/action";
-import { User } from "../types/auth";
-import { loginSchema, signupSchema, SignupFormValues } from "../schemas/auth";
+import { ActionState } from "@/types/action";
+import { User } from "@/types/auth";
+import { loginSchema, signupSchema } from "@/schemas/auth";
 import { validateData } from "@/lib/validation";
 import { cookies } from "next/headers";
 
 export async function loginAction(
   prevState: unknown,
-  formData: FormData
-): Promise<ActionState<{ token: string; username: string; displayName: string }>> {
+  formData: FormData,
+): Promise<
+  ActionState<{ token: string; username: string; displayName: string }>
+> {
   const rawData = Object.fromEntries(formData.entries());
   const validated = validateData(loginSchema, rawData);
 
@@ -35,7 +37,7 @@ export async function loginAction(
   }
 
   const token = result.data.token;
- 
+
   // Set cookie for middleware protection
   const cookieStore = await cookies();
   cookieStore.set("token", token, {
@@ -72,7 +74,7 @@ export async function loginAction(
 
 export async function signupAction(
   prevState: unknown,
-  formData: FormData
+  formData: FormData,
 ): Promise<ActionState<{ message: string }>> {
   const rawData = Object.fromEntries(formData.entries());
   const validated = validateData(signupSchema, rawData);
@@ -87,7 +89,7 @@ export async function signupAction(
   // Artificial delay to simulate network request
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  // Since FakeStoreAPI has no signup endpoint, we simulate a successful 
+  // Since FakeStoreAPI has no signup endpoint, we simulate a successful
   // registration and inform the user to log in.
   return {
     success: true,

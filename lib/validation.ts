@@ -1,10 +1,13 @@
 import { z } from "zod";
 
-export type ValidationResult<T> = 
+export type ValidationResult<T> =
   | { success: true; data: T }
   | { success: false; errors: Record<string, string[]> };
 
-export function validateData<T>(schema: z.ZodSchema<T>, data: unknown): ValidationResult<T> {
+export function validateData<T>(
+  schema: z.ZodSchema<T>,
+  data: unknown,
+): ValidationResult<T> {
   const result = schema.safeParse(data);
   if (!result.success) {
     return {

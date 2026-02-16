@@ -1,8 +1,8 @@
-export { default as ProductList } from "./ProductList";
-export { default as ProductCard } from "./ProductCard";
-export { ProductFilters } from "./ProductFilters";
-export { ProductPagination } from "./ProductPagination";
-export { ProductSkeleton } from "./ProductSkeleton";
-export { EmptyProducts } from "./EmptyProducts";
-export { default as CreateProductForm } from "./CreateProductForm";
-export { default as AddToCartButton } from "./AddToCartButton";
+export { default as ProductList } from "@/components/products/ProductList";
+export { default as ProductCard } from "@/components/products/ProductCard";
+export { ProductFilters } from "@/components/products/ProductFilters";
+export { ProductPagination } from "@/components/products/ProductPagination";
+export { ProductSkeleton } from "@/components/products/ProductSkeleton";
+export { EmptyProducts } from "@/components/products/EmptyProducts";
+export { default as CreateProductForm } from "@/components/products/CreateProductForm";
+export { default as AddToCartButton } from "@/components/products/AddToCartButton";

@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 };
 
 export default function CreateProductPage() {
-
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Background effects */}

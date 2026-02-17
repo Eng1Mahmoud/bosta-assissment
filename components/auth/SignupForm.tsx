@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { User, Lock, Mail, UserCircle } from "lucide-react";
+import { PasswordInput } from "@/components/password-input";
 import Link from "next/link";
 import { SubmitButton } from "@/components/SubmitButton";
 import { FieldError } from "@/components/FieldError";
@@ -83,9 +84,8 @@ export function SignupForm() {
         </label>
         <div className="relative group">
           <Lock className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
-          <Input
+          <PasswordInput
             name="password"
-            type="password"
             placeholder="••••••••"
             className="h-14 bg-muted/50 border-border focus:border-primary focus:ring-primary/20 rounded-xl pl-12 transition-all shadow-sm"
           />
